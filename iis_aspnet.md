@@ -14,3 +14,7 @@
 ## Create a new **Web Site**
 1. Choose the created pool
 2. Map the physical path to the DLL files
+
+
+## Problem
+https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-8.0.8-windows-hosting-bundle-installer
