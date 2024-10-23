@@ -5,7 +5,7 @@
 2. Select everything in **Internet Information Service** except **FTP Server**
 
 ## Angular
-1. Run ```ng build --base-ref ""```
+1. Run ```ng build --base-href ""```
 
 ## Create a new **Application Pool**
 1. Choose **No Managed Code** as .NET CLR Version
