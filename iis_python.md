@@ -11,6 +11,8 @@
 2. Add the ```web.config``` to the root directory
 3. make sure to fill processPath with the environment python path
 
+==========> https://learn.microsoft.com/en-us/visualstudio/python/configure-web-apps-for-iis-windows?view=vs-2022
+
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
