@@ -1,5 +1,7 @@
 # Python FastAPI in NGINX
 
+> if you are in windows, and you want to re-install ubuntu, run ```wsl --list --verbose``` then ```wsl --unregister <distribution-name>```
+
 - ```nginx```: Installs the Nginx web server. Nginx is a popular, high-performance HTTP server, reverse proxy, and load balancer, often used for serving web applications and static content.
 - ```sudo```:  This stands for "SuperUser DO" and allows the command to be run with elevated (administrator) privileges.
 - ```apt```: This is the package management tool used by Debian-based systems to manage software packages.
