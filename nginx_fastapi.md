@@ -217,34 +217,11 @@ Your FastAPI app is now running on Ubuntu with **Gunicorn** and **NGINX** in pro
 
 ---
 
-### Disable the Site
-To disable the site, remove its symbolic link from /etc/nginx/sites-enabled/:
+### Stop the Site
+```sudo systemctl stop myapp```
 
-```
-sudo rm /etc/nginx/sites-enabled/myapp
-```
+### Start the Site
+```sudo systemctl start myapp```
 
-Alternatively, you can use:
-
-```
-sudo unlink /etc/nginx/sites-enabled/myapp
-```
-
-3. Test Nginx Configuration
-Before reloading Nginx, ensure there are no syntax errors:
-```
-sudo nginx -t
-```
-If there are no errors, proceed to the next step.
-
-4. Reload Nginx
-Apply the changes by reloading Nginx:
-
-```
-sudo systemctl reload nginx
-```
-5. (Optional) Delete the Configuration File
-If you permanently want to remove the configuration:
-```
-sudo rm /etc/nginx/sites-available/myapp
-```
+### Check status of the Site
+```sudo systemctl status myapp```
