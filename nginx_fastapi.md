@@ -219,6 +219,9 @@ Your FastAPI app is now running on Ubuntu with **Gunicorn** and **NGINX** in pro
 
 ---
 
+### Restart the site
+``` sudo systemctl restart myapp```
+
 ### Stop the Site
 ```sudo systemctl stop myapp```
 
