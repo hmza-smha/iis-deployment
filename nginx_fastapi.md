@@ -236,3 +236,13 @@ Your FastAPI app is now running on Ubuntu with **Gunicorn** and **NGINX** in pro
 
 ### FastAPI logs:
 ``` sudo journalctl -u fastapi --no-pager --lines 50 ```
+
+
+### Reduce Gunicorn Workers
+Each Gunicorn worker might be loading the model separately, consuming more GPU memory. Try reducing the number of workers.
+
+#### Modify your Gunicorn command:
+```gunicorn -w 1 -k uvicorn.workers.UvicornWorker app:app```
+``` - w 1```: Limits it to one worker process.
+``` - k uvicorn.workers.UvicornWorker``` : Uses Uvicorn worker for async support.
+If this works but slows down responses, consider increasing workers but monitoring GPU usage.
