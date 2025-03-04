@@ -237,6 +237,7 @@ Your FastAPI app is now running on Ubuntu with **Gunicorn** and **NGINX** in pro
 ### FastAPI logs:
 ``` sudo journalctl -u fastapi --no-pager --lines 50 ```
 
+## Out-Of-Memory (OOM) Error
 
 ### Reduce Gunicorn Workers
 Each Gunicorn worker might be loading the model separately, consuming more GPU memory. Try reducing the number of workers.
@@ -250,3 +251,15 @@ Each Gunicorn worker might be loading the model separately, consuming more GPU m
 - ```- k uvicorn.workers.UvicornWorker``` : Uses Uvicorn worker for async support.
 
 If this works but slows down responses, consider increasing workers but monitoring GPU usage.
+
+### What Happened?
+
+- Gunicorn, by default, starts multiple worker processes. Each worker loads its own copy of the model, leading to **high memory consumption**.
+- Since your GPU has limited memory (19.67 GiB total, with only ~9.56 MiB free at the time of the error), multiple workers caused an **out-of-memory (OOM) error**.
+- By reducing the worker count to ```-w 1```, only one instance of the model was loaded into GPU memory, avoiding duplication and freeing up space.
+- 
+### Why Do More Workers Use More GPU Memory?
+- Each worker is an independent process (not threads).
+- Unlike CPU models, GPU models don’t share memory across processes. Each worker copies the entire model into the GPU.
+- If your model is large, running multiple workers multiplies the memory usage, leading to OOM errors.
+
