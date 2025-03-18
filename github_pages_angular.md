@@ -3,7 +3,10 @@ Quick Steps
 1. Replace `./../` with ` `
 2. `ng build --output-path dist --base-href /appName/`
 3.  Rename `index.html` to `404.html`
-4. Commit & Push to `main`
+4. `git status`
+5. `git add .`
+6. `git commit -m v0.0.x`
+7. `git push origin main`
 
 Deploying an Angular application to GitHub Pages involves the following steps:
 
