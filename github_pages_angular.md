@@ -32,7 +32,7 @@ If you already have a project, just navigate to its root directory.
 ### **Step 3: Build the Project for Production**
 Run the following command to generate production-ready files:
 
-> Images should be pathed in `assets/img/~`
+> Images should be formed into path `assets/img/~`
 
 ```sh
 ng build --output-path docs --base-href /your-repo-name/
