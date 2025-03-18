@@ -1,3 +1,10 @@
+Quick Steps
+
+1. Replace `./../` with ` `
+2. `ng build --output-path dist --base-href /appName/`
+3.  Rename `index.html` to `404.html`
+4. Commit & Push to `main`
+
 Deploying an Angular application to GitHub Pages involves the following steps:
 
 ---
