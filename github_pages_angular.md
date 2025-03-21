@@ -1,6 +1,6 @@
 Quick Steps
 
-1. Replace `./../` with ` `
+1. Replace `src="./../` with `src="` for images
 2. `ng build --output-path dist --base-href /appName/`
 3.  Rename `index.html` to `404.html`
 4. `git status`
