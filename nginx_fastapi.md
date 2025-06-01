@@ -271,7 +271,7 @@ If this works but slows down responses, consider increasing workers but monitori
 ```sudo nano /etc/systemd/system/fastapi-app2.service```
 
 - Paste the following (adjust paths and user as needed):
-- 
+
 ```
 [Unit]
 Description=FastAPI App2 (Local Only)
@@ -285,7 +285,7 @@ ExecStart=/home/yourusername/.venv/bin/uvicorn app2:app --host 127.0.0.1 --port 
 ```
 
 - Reload systemd and Start the Service
-- 
+
 - ```sudo systemctl daemon-reload```
 - ```sudo systemctl enable fastapi-app2```
 - ```sudo systemctl start fastapi-app2```
