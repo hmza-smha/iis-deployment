@@ -282,7 +282,9 @@ ExecStart=/home/yourusername/.venv/bin/uvicorn app2:app --host 127.0.0.1 --port 
 ```
 
 - Reload systemd and Start the Service
-- 
-```sudo systemctl daemon-reload```
-```sudo systemctl enable fastapi-app2```
-```sudo systemctl start fastapi-app2```
+- ```sudo systemctl daemon-reload```
+- ```sudo systemctl enable fastapi-app2```
+- ```sudo systemctl start fastapi-app2```
+
+- Test it
+```curl http://127.0.0.1:5968/```
