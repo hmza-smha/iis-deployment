@@ -263,3 +263,26 @@ If this works but slows down responses, consider increasing workers but monitori
 - Unlike CPU models, GPU models don’t share memory across processes. Each worker copies the entire model into the GPU.
 - If your model is large, running multiple workers multiplies the memory usage, leading to OOM errors.
 
+
+## Running an application as a locally service
+- Create a systemd Service File
+```sudo nano /etc/systemd/system/fastapi-app2.service```
+
+- Paste the following (adjust paths and user as needed):
+```
+[Unit]
+Description=FastAPI App2 (Local Only)
+After=network.target
+
+[Service]
+User=yourusername
+Group=yourusername
+WorkingDirectory=/home/yourusername/app2
+ExecStart=/home/yourusername/.venv/bin/uvicorn app2:app --host 127.0.0.1 --port 5968
+```
+
+- Reload systemd and Start the Service
+- 
+```sudo systemctl daemon-reload```
+```sudo systemctl enable fastapi-app2```
+```sudo systemctl start fastapi-app2```
