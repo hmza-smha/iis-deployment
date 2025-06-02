@@ -235,7 +235,10 @@ Your FastAPI app is now running on Ubuntu with **Gunicorn** and **NGINX** in pro
 ``` sudo tail -f /var/log/nginx/error.log ```
 
 ### FastAPI logs:
-``` sudo journalctl -u fastapi --no-pager --lines 50 ```
+- ``` sudo journalctl -u fastapi --no-pager --lines 50 ```
+## Live Logs
+- ```sudo journalctl -u ai_services -n 10 -f --no-pager```
+
 
 ## Out-Of-Memory (OOM) Error
 
