@@ -233,6 +233,19 @@ Your FastAPI app is now running on Ubuntu with **Gunicorn** and **NGINX** in pro
 
 ### Nginx Error logs :
 ``` sudo tail -f /var/log/nginx/error.log ```
+The log message you provided is from an Nginx web server. Here's a breakdown of what it means:
+
+```yaml
+2025/06/12 09:25:47           # Date and time of the error
+[error]                      # Log level (this is an error)
+3338259#3338259:             # Process ID and thread ID
+*8042                        # Connection/request number
+access forbidden by rule,    # The actual error message — access was denied due to a configured rule
+client: 94.249.61.230,       # IP address of the client making the request
+server: 49.13.102.175,       # IP address of the server handling the request
+request: "GET / HTTP/1.1",   # HTTP request line (the client tried to access the root path "/")
+host: "49.13.102.175"        # Host header sent by the client
+```
 
 ### Nginx Access logs :
 ```sudo tail -n 20 /var/log/nginx/access.log```
