@@ -231,8 +231,11 @@ Your FastAPI app is now running on Ubuntu with **Gunicorn** and **NGINX** in pro
 ### Check status of the Site
 ```sudo systemctl status myapp```
 
-### Nginx logs:
+### Nginx Error logs :
 ``` sudo tail -f /var/log/nginx/error.log ```
+
+### Nginx Access logs :
+```sudo tail -n 20 /var/log/nginx/access.log```
 
 ### FastAPI logs:
 - ``` sudo journalctl -u fastapi --no-pager --lines 50 ```
