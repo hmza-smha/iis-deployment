@@ -74,3 +74,55 @@ watch -n 1 nvidia-smi
 ```
 
 You should see `ollama` appear in the nvidia-smi process list consuming VRAM.
+
+---
+
+If your shell has a cached/stale path. Just reload it:
+
+```bash
+hash -r
+```
+
+Or start a fresh shell:
+```bash
+exec bash
+```
+
+Then test:
+```bash
+ollama --version
+ollama list
+```
+
+It should now use `/usr/local/bin/ollama` correctly.
+
+---
+
+Good — Ollama is working but the service isn't running yet. Let's set it up:
+
+```bash
+# Check if service file was created by the install script
+cat /etc/systemd/system/ollama.service
+```
+
+Then start it:
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable ollama
+sudo systemctl start ollama
+sudo systemctl status ollama
+```
+
+Then verify GPU:
+```bash
+ollama --version
+ollama list
+
+# Pull a model and test
+ollama pull mistral
+ollama run mistral
+
+# Watch GPU in another terminal
+watch -n 1 nvidia-smi
+```
+
