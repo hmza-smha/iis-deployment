@@ -37,7 +37,7 @@ After the official script install, the service file should already exist. First 
 cat /etc/systemd/system/ollama.service
 ```
 
-If it's already there, just add the GPU environment variables. Here's the complete file to put in:
+If it's already there **leave it as is** or just add the GPU environment variables. Here's the complete file to put in:
 
 ```ini
 [Unit]
